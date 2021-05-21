@@ -1,0 +1,13 @@
+{
+    "elements": {
+        "g:plusone": {
+            "attributes": {
+                "size": {},
+                "href": {}
+            }
+        }
+    },
+    "attributes": {
+        "allow": {}
+    }
+}

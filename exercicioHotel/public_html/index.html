@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <script src="js/script.js"></script>
+
+    </head>
+    <body>
+        <section class="container">
+            <h1>Reservar Quarto</h1>
+            <h2>Tipo de Quarto: </h2>
+            <form>
+                <input  type="radio"  name="quarto" value="suite" onchange="addQuarto('suite')" />Suite
+                <input  type="radio"  name="quarto" value="standard"  onchange="addQuarto('standard')" />Standard
+                <h3>Cama:</h3>
+                <input value="solteiro" type="radio" name="cama" onchange="addCama('solteiro')"/>Solteiro
+                <input value="casal" type="radio" name="cama" onchange="addCama('casal')"/>Casal
+                <h3> Exigências:</h3>
+                <input name="itemCheck" type="checkbox" value="tv" id="tv" onclick="addValor('tv')" /> TV
+                <input name="itemCheck" type="checkbox" value="ar" id="ar" onchange="addValor('ar')"/> Ar Condicionado
+                <input name="itemCheck" type="checkbox" value="closet" id="closet" onchange="addValor('closet')"/> Closet
+                <input name="itemCheck" type="checkbox" value="tvAcabo" id="tvAcabo" onchange="addValor('tvAcabo')"/> TV a cabo
+                <input type="submit" value="Efetuar Reserva"  onclick="exibe()">
+            </form>
+        </section>
+
+    </body>
+</html>

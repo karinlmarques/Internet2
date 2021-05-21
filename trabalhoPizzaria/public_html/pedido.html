@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Massas e cia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css"/>
+        <script src="js/script.js"></script>
+
+    </head>
+    <body class="corpo">
+        <nav id="menu">
+            <div class="container-fluid">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li ><a href="sobre.html">Sobre</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="pedido.html">Monte sua pizza</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container"> 
+            <header class="jumbotron">
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure>
+                            <img class="logo" src="imagens/logo.png" alt="logo"/>
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <h1>Massas e cia</h1>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="btn-group-vertical" role="group">
+                        <div class="btn-group" role="group" >
+                            <button type="button" class="btn btn-primary" id="mostraTamanho" onclick="mostraTamanho()">Escolha o tamanho</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary" id="mostraSabores" onclick="mostraSabores()">Escolha os sabores</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary" id="mostraMassa" onclick="mostraMassa()">Escolha o tipo de massa</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary" id="mostraBorda" onclick="mostraBorda()">Escolha borda</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary" id="mostraTotal" onclick="mostraTotal()">Resumo do pedido</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div id="tamanho">
+                        <h2 class="jumbotron">Escolha o tamanho da sua pizza</h2>
+                        <form>
+                            <figure>
+                                <img class="tam" src="imagens/tamP.jpg" alt="pequena">
+                                <input  type="radio"  name="tamanho" id="pequena" value="Pequena" onchange="addTamanho('pequena')" />Pequena (1 sabor)
+                            </figure>
+                            <figure>
+                                <img class="tam" src="imagens/tamM.jpg" alt="media">
+                                <input  type="radio"  name="tamanho" id="media" value="Média" onchange="addTamanho('media')" />Média (até 2 sabores)
+                            </figure>
+                            <figure>
+                                <img class="tam" src="imagens/tamG.jpg" alt="rande">
+                                <input  type="radio"  name="tamanho" id="grande" value="Grande" onchange="addTamanho('grande')"/>Grande (até 3 sabores)
+                            </figure>
+                            <input type="button" class="btn btn-primary" id="botao3" value="Próximo"  onclick="mostraSabores(), teste()">
+                        </form>
+                    </div>
+                    <div id="sabor">
+                        <h4 class="jumbotron">Escolha o(s) sabor(es) da sua pizza</h4>
+                        <div class="row">
+                            <form >
+                                <h3>Lista de Sabores</h3>
+                                <div class="col-md-6" >
+                                    <h4>Salgadas</h4>
+                                    <div class="row">
+                                        <input name="itemCheck" type="checkbox" value="bacon" id="bacon" onchange="addSabor('bacon')" /> Bacon
+                                    </div>
+                                    <div class="row">
+                                        <input name="itemCheck" type="checkbox" value="calabresa" id="calabresa" onchange="addSabor('calabresa')" /> Calabresa
+                                    </div>
+                                    <div class="row">
+                                        <input name="itemCheck" type="checkbox" value="fricasse" id="fricasse" onchange="addSabor('fricasse')" /> Fricassê
+                                    </div>
+                                    <div class="row">
+                                        <input name="itemCheck" type="checkbox" value="lombo" id="lombo" onchange="addSabor('lombo')" /> Lombo
+                                    </div>
+                                    <div class="row">
+                                        <input name="itemCheck" type="checkbox" value="portuguesa" id="portuguesa" onchange="addSabor('portuguesa')" /> Portuguesa
+                                    </div>
+                                    <input name="itemCheck" type="checkbox" value="queijo" id="queijo" onchange="addSabor('queijo')" /> Quatro Queijos
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Doces</h4>
+                                    <div class="row">
+                                    <input name="itemCheck" type="checkbox" value="brigadeiro" id="brigadeiro" onchange="addSabor('brigadeiro')" /> Brigadeiro
+                                    </div>
+                                    <div class="row">
+                                    <input name="itemCheck" type="checkbox" value="prestigio" id="prestigio" onchange="addSabor('prestigio')" /> Prestígio
+                                    </div>
+                                    <div class="row">
+                                    <input name="itemCheck" type="checkbox" value="mms" id="mms" onchange="addSabor('mms')" /> Chocolate com MMS
+                                    </div>
+                                    <div class="row">
+                                        <input name="itemCheck" type="checkbox" value="morango" id="morango" onchange="addSabor('morango')" /> Chocolate com morango
+                                    </div>
+                                    <div class="row">
+                                    <input name="itemCheck" type="checkbox" value="moleque" id="moleque" onchange="addSabor('moleque')" /> Pé de moleque
+                                    </div>
+                                    <input name="itemCheck" type="checkbox" value="julieta" id="julieta" onchange="addSabor('julieta')" /> Romeu e Julieta
+                                </div>
+                                
+                                <input type="button" class="btn btn-primary" id="botao2" value="Próximo"  onclick="mostraMassa(), testeSabor()">
+                            </form>
+                        </div>
+                    </div>
+                    <div id="tipoMassa">
+                        <h2 class="jumbotron">Escolha o tipo de massa</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input  type="radio"  name="massa" id="integral" value="integral" onchange="addMassa('integral')"/>Integral
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input  type="radio"  name="massa" id="tradicional" value="tradicional" onclick="addMassa('tradicional')"/>Tradicional
+                                        </div>
+                                    </div>
+                                    <input type="button" class="btn btn-primary" id="botao1" value="Próximo"  onclick="mostraBorda(), testeMassa()">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="borda">
+                        <h2 class="jumbotron">Com borda</h2>
+                        <form name="form1">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input  type="radio" id="opsim" name="borda" value="sim" onchange="addBorda('sim')"/>Sim
+                                    <input type="radio"  disabled="disabled" name="radio1" id="opcheddar" value="Cheddar" onclick="saborBorda('cheddar')">Cheddar
+                                    <input type="radio"  disabled="disabled" name="radio1" id="opcatupiry" value="Catupiry"  onclick="saborBorda('catupiry')">Catupiry
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="radio" id="opnao" name="borda" value="nao" onchange="addBorda('nao')" onclick="limparRadios('radio1')"/>Não
+                                </div>
+                            </div>
+                            <input type="button" class="btn btn-primary" value="Próximo" id="botao" onclick="mostraTotal(), testeBorda(), testeSaborBorda()">
+                        </form>
+                    </div>
+                    <div id="total">
+                        <h2 class="jumbotron">Resumo do pedido</h2>
+                        <div id="exibaTudo">
+                            
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Enviar"  onclick="resposta(), location.reload()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container" id="mapa">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Mapa do site</h4>
+                    <a href="index.html">Home</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="cadastro.html">Cadastro</a>
+                    <a href="pedido.html">Monte seu pedido</a>
+                </div>
+                <div class="col-md-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.2692789922585!2d-41.68238338472927!3d-21.14167938258581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc6de2b24cac0b%3A0x9baf69666888a531!2sR.+Dr.+Columbiano+Teixeira+de+Siqueira%2C+686+-+Centro%2C+Bom+Jesus+do+Itabapoana+-+RJ%2C+28360-000!5e0!3m2!1spt-BR!2sbr!4v1530992853572" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
